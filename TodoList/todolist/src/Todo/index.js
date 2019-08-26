@@ -4,7 +4,7 @@ import TodoInput from './TodoInput';
 
 export default class Todo extends Component {
 
-    static count = 3
+    static count = 4
 
     constructor(){
         super()
@@ -19,20 +19,20 @@ export default class Todo extends Component {
         console.log(this.state.todos)
     }
 
-    // changeComplete = (tno) => {
+    changeComplete = (tno) => {
         
-    //     const target = this.state.todos.filter(obj => obj.tno === tno)[0]
-    //     const index = this.state.todos.indexOf(target)
+        const target = this.state.todos.filter(obj => obj.tno === tno)[0]
+        const index = this.state.todos.indexOf(target)
 
-    //     const tempArr = this.state.todos
+        const tempArr = this.state.todos
 
-    //     tempArr[index] = Object.assign(target, {complete: !target.complete})
+        tempArr[index] = Object.assign(target, {complete: !target.complete})
 
-    //     console.log(tempArr)
+        console.log(tempArr)
 
-    //     this.setState({todos:tempArr})
+        this.setState({todos:tempArr})
 
-    // }
+    }
     
     addTodo = (title)=>{
         const arr = this.state.todos
@@ -48,7 +48,7 @@ export default class Todo extends Component {
             
             <div>
                 
-            <TodoList todos={this.state.todos}></TodoList>
+            <TodoList todos={this.state.todos} change={this.changeComplete}></TodoList>
             <TodoInput add={this.addTodo}></TodoInput>
 
             </div>

@@ -8,7 +8,6 @@ export default class Counter extends Component{
             count:0,
             text:0
         }
-
     }
 
     increase = () => {
