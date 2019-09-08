@@ -1,7 +1,8 @@
-import React,{useState, useEffect} from 'react'
+import React,{useState} from 'react'
  
 export default function ProductList(props){
    console.log("function gets started------------------------------------")
+
    const [Cart , setCart] = useState([])
 //    const [check1, setCheck1] = useState(false)
     const [items, setItems] = useState([
